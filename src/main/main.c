@@ -1,11 +1,11 @@
 #include<stdio.h>
-#include "lexer.h"
+#include "clear_lexer.h"
 
 int main(int argc, char const *argv[])
 {   
-    struct TokenList tokens = tokenify("damn + 1243.24");
+    struct Clear_TokenList tokens = tokenify("var damn = 2; damn++;");
     printf("Tokenify done, final size %i\n", tokens.size);
     
-    freeList(tokens);
+    freeTokenList(&tokens);
     return 0;
 }
